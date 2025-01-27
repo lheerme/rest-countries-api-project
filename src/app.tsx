@@ -1,5 +1,11 @@
+import { ThemeProvider } from "./components/theme-provider";
+import { RouterProvider } from "react-router";
+import { routes } from "@/routes";
+
 export function App() {
   return (
-    <h1>rest-countries-api-project</h1>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <RouterProvider router={routes} />
+    </ThemeProvider>
   )
 }
