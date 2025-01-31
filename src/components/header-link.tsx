@@ -1,16 +1,21 @@
 import { ComponentProps } from "react"
 import { Link, useLocation } from "react-router"
+import { twMerge } from "tailwind-merge"
 
 export type HeaderLinkProps = ComponentProps<typeof Link>
 
 export function HeaderLink(props: HeaderLinkProps) {
   const { pathname } = useLocation()
+  const { className, ...rest } = props
 
   return (
     <Link
-      {...props}
+      {...rest}
       data-current={pathname.toLowerCase() === props.to}
-      className="font-medium data-[current=true]:[text-shadow:1px_0_0_currentColor] hover:[text-shadow:1px_0_0_currentColor] hover:transition-shadow"
+      className={twMerge(
+        "font-medium data-[current=true]:[text-shadow:1px_0_0_currentColor] hover:[text-shadow:1px_0_0_currentColor] hover:transition-shadow",
+        className
+      )}
     />
   )
 }
