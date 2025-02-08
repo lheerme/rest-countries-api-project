@@ -9,7 +9,7 @@ export function CountryCard({ country }: CountryCardProps) {
   return (
     <li>
       <Link
-        to={`${country.cca3}`}
+        to={`${country.cca3.toLowerCase()}`}
         className="flex flex-col w-44 sm:w-64 h-40 sm:h-56 rounded-md border border-input bg-background hover:ring-2 hover:ring-ring hover:transition-shadow group px-6 pt-6"
       >
         <div className="w-full h-3/4 overflow-hidden">

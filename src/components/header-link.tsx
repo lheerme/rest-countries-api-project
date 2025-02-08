@@ -11,7 +11,11 @@ export function HeaderLink(props: HeaderLinkProps) {
   return (
     <Link
       {...rest}
-      data-current={pathname.toLowerCase() === props.to}
+      data-current={
+        props.to === "/" ? 
+        pathname.toLowerCase() === props.to : 
+        pathname.toLowerCase().startsWith(String(props.to))
+      }
       className={twMerge(
         "font-medium data-[current=true]:[text-shadow:1px_0_0_currentColor] hover:[text-shadow:1px_0_0_currentColor] hover:transition-shadow",
         className
