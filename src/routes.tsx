@@ -4,12 +4,14 @@ import { Home } from "@/pages/app/home";
 import { Countries } from "@/pages/app/countries";
 import { About } from "@/pages/app/about";
 import { CountryDetail } from "@/pages/app/country-detail";
+import { NotFound } from "@/pages/404";
+import { Error } from "@/pages/error";
 
 export const routes = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    // errorElement: <Error />,
+    errorElement: <Error />,
     children: [
       { path: '/', element: <Home /> },
       { path: '/countries', element: <Countries /> },
@@ -20,8 +22,8 @@ export const routes = createBrowserRouter([
       { path: '/about', element: <About /> },
     ],
   },
-  // {
-  //   path: '*',
-  //   element: <NotFound />,
-  // },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
 ])
