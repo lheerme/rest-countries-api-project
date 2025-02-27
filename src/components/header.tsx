@@ -29,7 +29,7 @@ export function Header() {
 
   return (
     <div className="w-full border-b border-border">
-      <header className="max-w-7xl w-full mx-auto py-2 px-4 flex items-center gap-4">
+      <header className="max-w-7xl w-full mx-auto py-2 px-4 flex items-center gap-8">
         <Link
           to={'/'}
           className="font-bold text-lg w-full max-w-36 leading-tight z-[2]"
@@ -44,15 +44,9 @@ export function Header() {
           )}
         >
           <nav className="flex flex-col sm:flex-row items-center gap-6 sm:gap-4">
-            <HeaderLink to={'/'} className="text-xl sm:text-base">
-              Home
-            </HeaderLink>
-            <HeaderLink to={'/countries'} className="text-xl sm:text-base">
-              Countries
-            </HeaderLink>
-            <HeaderLink to={'/about'} className="text-xl sm:text-base">
-              About
-            </HeaderLink>
+            <HeaderLink to={'/'}>Home</HeaderLink>
+            <HeaderLink to={'/countries'}>Countries</HeaderLink>
+            <HeaderLink to={'/about'}>About</HeaderLink>
           </nav>
           <div className="sm:ml-auto flex items-center gap-2">
             <Button variant="outline" size="icon" asChild>
