@@ -1,3 +1,5 @@
+import { NotFound } from '@/pages/404'
+import { ErrorPage } from '@/pages/error-page'
 import { AppLayout } from '@/pages/layouts/app-layout'
 import { createBrowserRouter } from 'react-router'
 
@@ -5,7 +7,7 @@ export const routes = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    errorElement: <h1>error element</h1>,
+    errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <h1>home</h1> },
       { path: '/countries', element: <h1>countries</h1> },
@@ -18,6 +20,6 @@ export const routes = createBrowserRouter([
   },
   {
     path: '*',
-    element: <h1>not found</h1>,
+    element: <NotFound />,
   },
 ])
