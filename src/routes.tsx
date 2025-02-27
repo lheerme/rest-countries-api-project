@@ -1,6 +1,7 @@
 import { NotFound } from '@/pages/404'
 import { About } from '@/pages/app/about'
 import { Countries } from '@/pages/app/countries'
+import { CountryDetail } from '@/pages/app/country-detail'
 import { Home } from '@/pages/app/home'
 import { ErrorPage } from '@/pages/error-page'
 import { AppLayout } from '@/pages/layouts/app-layout'
@@ -16,7 +17,7 @@ export const routes = createBrowserRouter([
       { path: '/countries', element: <Countries /> },
       {
         path: '/countries/:countryCode',
-        element: <h1>country detail</h1>,
+        element: <CountryDetail />,
       },
       { path: '/about', element: <About /> },
     ],
