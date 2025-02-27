@@ -19,6 +19,9 @@ export function CountriesList() {
 
       return data
     },
+    staleTime: Number.POSITIVE_INFINITY,
+    refetchOnWindowFocus: false,
+    retry: 2,
   })
 
   const searchFilter =
